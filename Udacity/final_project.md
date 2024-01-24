@@ -55,7 +55,7 @@ Given the percentage you chose, how long would the experiment take to run, using
 
 
 ## **$\textcolor{brown}{Analysis}$**
-The data for you to analyze is here. This data contains the raw information needed to compute the above metrics, broken down day by day. Note that there are two sheets within the spreadsheet - one for the experiment group, and one for the control group.
+The data for you to analyze is here (`Final Project Results.xlsx`). This data contains the raw information needed to compute the above metrics, broken down day by day. Note that there are two sheets within the spreadsheet - one for the experiment group, and one for the control group.
 
 
 The meaning of each column is:
@@ -64,3 +64,10 @@ The meaning of each column is:
  * **Clicks:** Number of unique cookies to click the course overview page that day.
  * **Enrollments:** Number of user-ids to enroll in the free trial that day.
  * **Payments:** Number of user-ids who who enrolled on that day to remain enrolled for 14 days and thus make a payment. (Note that the date for this column is the start date, that is, the date of enrollment, rather than the date of the payment. The payment happened 14 days later. Because of this, the enrollments and payments are tracked for 14 fewer days than the other columns.)
+
+
+## **$\textcolor{grey}{Sanity\ Checks}$**
+Start by checking whether your invariant metrics are equivalent between the two groups. If the invariant metric is a simple count that should be randomly split between the 2 groups, you can use a binomial test as demonstrated in Lesson 5. Otherwise, you will need to construct a confidence interval for a difference in proportions using a similar strategy as in Lesson 1, then check whether the difference between group values falls within that confidence level.
+
+
+If your sanity checks fail, look at the day by day data and see if you can offer any insight into what is causing the problem.
