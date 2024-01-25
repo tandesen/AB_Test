@@ -71,3 +71,22 @@ Start by checking whether your invariant metrics are equivalent between the two 
 
 
 If your sanity checks fail, look at the day by day data and see if you can offer any insight into what is causing the problem.
+
+
+## **$\textcolor{grey}{Check\ for\ Practical\ and\ Statistical\ Significance}$**
+Next, for your evaluation metrics, calculate a confidence interval for the difference between the experiment and control groups, and check whether each metric is statistically and/or practically significance. A metric is statistically significant if the confidence interval does not include 0 (that is, you can be confident there was a change), and it is practically significant if the confidence interval does not include the practical significance boundary (that is, you can be confident there is a change that matters to the business.)
+
+
+If you have chosen multiple evaluation metrics, you will need to decide whether to use the Bonferroni correction. When deciding, keep in mind the results you are looking for in order to launch the experiment. Will the fact that you have multiple metrics make those results more likely to occur by chance than the alpha level of 0.05?
+
+
+## **$\textcolor{grey}{Run\ Sign\ Tests}$**
+For each evaluation metric, do a sign test using the day-by-day breakdown. If the sign test does not agree with the confidence interval for the difference, see if you can figure out why.
+
+
+## **$\textcolor{grey}{Make\ a\ Recommendation}$**
+Finally, make a recommendation. Would you launch this experiment, not launch it, dig deeper, run a follow-up experiment, or is it a judgment call? If you would dig deeper, explain what area you would investigate. If you would run follow-up experiments, briefIy describe that experiment. If it is a judgment call, explain what factors would be relevant to the decision.
+
+
+## **$\textcolor{brown}{Follow-Up\ Experiment:\ How\ to\ Reduce\ Early\ Cancellations}$**
+If you wanted to reduce the number of frustrated students who cancel early in the course, what experiment would you try? Give a brief description of the change you would make, what your hypothesis would be about the effect of the change, what metrics you would want to measure, and what unit of diversion you would use. Include an explanation of each of your choices.
