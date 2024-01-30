@@ -31,3 +31,9 @@
 我们选择的两个 evaluation metrices 之间有很大的相关性，可用 bonferroni correction 来进行修正，即选择 $\frac{\alpha}{2}=0.025$ 来作为每个 metric 的 alpha 值。通过样本量计算网站得到两个指标需要的样本量结果如下：
 
 
+![lll](sample_size_gross_conversion.PNG)
+
+![lll](sample_size_net_conversion.PNG)
+
+
+所以我们最后取 35013 样本量即可。
