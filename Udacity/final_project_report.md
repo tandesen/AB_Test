@@ -69,3 +69,19 @@
 
 
 ## **$\textcolor{grey}{Check\ for\ Practical\ and\ Statistical\ Significance}$**
+因为指标之间相互关联，我们使用 Bonferroni correction 重新设置 α 为 $0.025$。计算两个指标的置信区间：
+ * **Gross conversion:** 先算一下平均点击率 $\hat{p}$，计算的方法是用实验组与对照组 Enrollments 总数除以实验组与对照组 Clicks 总数，数值是 $0.2086$。再计算 Variance，是 $0.0044$。然后计算 $97.5%$ 置信区间，查表双侧检验（这里我觉得也可以用单侧检验，因为我们只关心正向的结果，但我不知道能不能用单侧检验）得 $2.24$。实验组与对照组的点击率差值是 $0.0206$。所以置信区间是 $[0.0206-2.24*0.0044,0.0206+2.24*0.0044]$ 即 $[0.010744,0.030456]$，置信区间全部在最小阈值 $0.01$ 以上，所以这个指标效果很好可以考虑上线。
+ * **Net conversion:** 略同上，平均点击率算得 $0.1151$，Variance 是 $0.0034$，对照组与实验组的点击率差值是 $0.0049$，双侧检验 $97.5%$ 置信区间为 $[0.0049-2.24*0.0034,0.0049+2.24*0.0034]$ 即 $[-0.0027,0.0125]$，点击率的差比最小阈值小，但置信区间超过了最小阈值，却也包括负值，代表在 $97.5%$ 置信区间内，有可能我们的点击率是显著的，也有可能是非显著的甚至副作用。这里我们的建议可能是增大相关统计指标，比如 β、样本量 等，再进行迭代实验，观察是否能有更好的效果。
+
+
+## **$\textcolor{grey}{Run\ Sign\ Tests}$**
+ * **Gross conversion:** 我不确定这里我写的是否符合它想让我算的，因为题目里面说点击率差值的置信区间，听起来好像要算每天的点击率差，然后看有多少天在我们前文算的 $97.5%$ 置信区间内，但我这么算只有 9/23 在置信区间中，按照 $97.5%$ 概率算，23 条记录中出现 9 条正向的概率小于 $0.000%$ 后四位小数点，而正常应该如下这么算（课程里也是这么教的）：我们计算实验组点击率小于对照组的天数，如果实验组对照组没差距的话，天数应该在总天数的 $50%$ 左右，就像掷骰子，这应该符合概率为 $50%$ 的正态分布。我们实验的结果是在 23 天中有 9 天是点击率实验组小于对照组，用[这个网址](https://www.graphpad.com/quickcalcs/binomial2/) 可以测得，在平均概率为 $50%$ 事件中，23 次事件中有 9 次发生的概率是 $0.0026$ (双尾实验)。这小于了 $0.05$，说明了在 $95%$ 概率下，实际上实验组与对照组是产生了差异的。而我目前不知道计算点击率差在置信区间内次数比上总次数的做法是否正确或者应该怎么进一步分析，可能是我有点走火入魔了。
+ * **Net conversion:** 略同上， 10/23，概率是 $0.6776$，说明大概率没差别。
+
+
+## **$\textcolor{grey}{Make\ a\ Recommendation}$**
+There is a significant difference between **Gross conversion**, which is defined as number of enrollments divided by clicks. However, there is no significant difference between **Net conversion**, which is defined as number of payments divided by clicks. I think this illustrates that although fewer people choose to enroll into the course in the experiment group, they are more likely to complete the free trial and make a payment. The number of payments are not significantly affacted and sales are not decreased dramatically in the experiment group hopefully. Thus users have a better course experiment which fullfills our business goal. Thus I think we should launch the experiment. Perhaps we should run additional experiments and consider revenue metrics as well.
+
+
+## **$\textcolor{brown}{Follow-Up\ Experiment:\ How\ to\ Reduce\ Early\ Cancellations}$**
+I want to add a function using LLM tools to provide coach services to students so that their questions can be solved in time, which will potentially reduce the number of frustrated students. For metrics to be claculated, first one comes to my mind is the number of early cancel students divided by total number of students. However, calculating this metric takes a lot of time which is hard to be done during an AB test. Alternative metrics come into my mind is the average time spent on the course everyday or retention, but these metrics need further inspect as well since they might be too robust.
