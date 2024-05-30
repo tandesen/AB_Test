@@ -1,34 +1,29 @@
 <h1 align="center">
-![tandesen_icon](picture/tattoo2.jfif)
-</h1>
-
-
-<h1 align="center">
   <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.png" alt="Markdownify" width="200"></a>
+  <img src="https://raw.githubusercontent.com/tandesen/AB_Test/main/pictures/tattoo2.jfif" alt="Markdownify" width="280"></a>
   <br>
-  Markdownify
+  T.S.
   <br>
 </h1>
 
-<h4 align="center">A minimal Markdown Editor desktop app built on top of <a href="http://electron.atom.io" target="_blank">Electron</a>.</h4>
+<h4 align="center">辛普森悖论 <a href="https://en.wikipedia.org/wiki/Simpson%27s_paradox" target="_blank">Wiki</a>.</h4>
 
 <p align="center">
-  <a href="https://badge.fury.io/js/electron-markdownify">
-    <img src="https://badge.fury.io/js/electron-markdownify.svg"
+  <img src="https://img.shields.io/badge/小红书-德森大老爷-red"
          alt="Gitter">
+  <a>
+	  <img src="https://img.shields.io/badge/B站-德森大老爷-purple">
   </a>
-  <a href="https://gitter.im/amitmerchant1990/electron-markdownify"><img src="https://badges.gitter.im/amitmerchant1990/electron-markdownify.svg"></a>
-  <a href="https://saythanks.io/to/bullredeyes@gmail.com">
-      <img src="https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg">
+  <a>
+      <img src="https://img.shields.io/badge/github-tandesen-green">
   </a>
-  <a href="https://www.paypal.me/AmitMerchant">
+  <a>
     <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
   </a>
 </p>
 
 <p align="center">
-  <a href="#key-features">Key Features</a> •
+  <a href="#key-features">前言</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#download">Download</a> •
   <a href="#credits">Credits</a> •
@@ -38,7 +33,13 @@
 
 ![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
 
-## 字节面试问题
+## 前言
+
+当一个指标发生变化时，我们往往想通过细分维度的拆解来分析变化原因。比如一个 APP 中指标 **活跃用户数** 增加了 **100**，我们就可能想分别看不同系统（安卓与苹果）中指标的变化。我们期待看到不同系统中指标变化有`超过`和`低于`整体指标变化 **（100）** 的情况，从而找出是哪个系统`驱动`了整体指标的变化。这听起来很合理，对吧？  
+    
+但对于一个 **比值类指标** 而言，比如点击率，可能会出现整体指标增加，而各个系统中指标都减少的情况。  :scream:  
+
+在我不知道这个东西叫 `辛普森悖论` 之前，我是这么理解这件事情的。如果两边是 **数值类型的指标** 而不是比值类型的指标，比如我们看的是点击数量而不是点击率的变化，就不会出现这个问题，因为 **两边的加和是100%**。即安卓与苹果两个系统的点击数量总和就是整体的点击数量，所以整体数量的增加或者减少一定是由其中一部分来`驱动`的。
 
 * 点击率指标对比上周下降了，但是在苹果与安卓两个平台都下上升了，这可能么？为什么？
   - Instantly see what your Markdown documents look like in HTML as you create them.
