@@ -26,16 +26,13 @@
   <a href="#楔子">楔子</a> •
   <a href="#理论解释">理论解释</a> •
   <a href="#辛普森悖论">辛普森悖论</a> •
-  <a href="#进一步理解与应对方法">进一步理解与应对方法</a> •
-  <a href="#related">Related</a> •
-  <a href="#license">License</a>
+  <a href="#进一步理解与应对方法">进一步理解与应对方法</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
 
 ## 楔子
 
-当一个指标发生变化时，我们往往想通过细分维度的拆解来分析变化原因。比如一个 APP 中某个 **点击率** 增加了 **20%**，我们就可能想分别看不同系统（安卓与苹果）中指标的变化。我们期待不同系统中有`超过`和`低于`整体指标变化 **（20%）** 的情况，比如安卓涨了 **30%**，苹果涨了 **5%**，从而找出是哪个系统`驱动`了整体指标的增长（安卓）。这很常见，听起来也很合理，对吧？  
+当一个指标发生变化时，我们往往想通过细分维度的拆解来分析变化原因。比如一个 APP 中某个 **点击率** 增加了 **20%**，我们可能想分别看不同系统（安卓与苹果）中指标的变化。我们期待不同系统中有`超过`和`低于`整体指标变化 **（20%）** 的情况，比如安卓涨了 **30%**，苹果涨了 **5%**，从而找出是哪个系统`驱动`了整体指标的增长（安卓）。这很常见，听起来也很合理，对吧？  
 
 但对于一个 **比值类指标** 而言，比如点击率，可能会出现整体指标增加，而各个系统中指标都减少的情况。 :scream: 比如整体 **点击率** 增加了 **20%**，但每个系统中都减少了 **5%**。  
 
@@ -81,7 +78,7 @@ $$
 \frac{a_2+b_2}{A_2+B_2} > \frac{a_1+b_1}{A_1+B_1}
 $$
 
-因为分式加法 $\frac{a}{A} + \frac{b}{B} \neq \frac{a+b}{A+B}$ 。我们计算整体点击率和各个系统点击率的时候，分母是不一样的。可能工作中很多时候上式是对的，人们会解释成`部分驱动整体`，但出现反例时，他们就会惊掉下巴 :grimacing:  
+因为分式加法 $\frac{a}{A} + \frac{b}{B} \neq \frac{a+b}{A+B}$ 。我们计算整体点击率和各个系统点击率的时候，分母是不一样的。可能工作中很多时候上式是对的，人们会解释成`某些部分驱动了整体`，但出现反例时，他们就会惊掉下巴。 :grimacing:  
 
 ## 辛普森悖论
 
@@ -109,96 +106,7 @@ $$
 
 * 如何应对辛普森悖论？
   - 统一分母：如果我们想看两个系统中哪个的变化（增长）对整体变化（增长）带来的影响更大，我们可以使用 **增长贡献率** 这类指标，比如安卓系统的增长贡献率是 $\frac{a_2-a_1}{(A_2+B_2)-(A_1+B_1)}$，苹果系统的是 $\frac{b_2-b_1}{(A_2+B_2)-(A_1+B_1)}$。这样统一了比值类指标的分母，所有维度层级的指标总和是 **100%**，就不会出现辛普森悖论。
-  - 调配比例
-  - 对于 **AB实验**，
-
-
-
-* 点击率指标对比上周下降了，但是在苹果与安卓两个平台都下上升了，这可能么？为什么？
-  - Instantly see what your Markdown documents look like in HTML as you create them.
-* Sync Scrolling
-  - While you type, LivePreview will automatically scroll to the current location you're editing.
-* GitHub Flavored Markdown  
-* Syntax highlighting
-* [KaTeX](https://khan.github.io/KaTeX/) Support
-* Dark/Light mode
-* Toolbar for basic Markdown formatting
-* Supports multiple cursors
-* Save the Markdown preview as PDF
-* Emoji support in preview :tada:
-* App will keep alive in tray for quick usage
-* Full screen mode
-  - Write distraction free.
-* Cross platform
-  - Windows, macOS and Linux ready.
-
-## How To Use
-
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
-
-# Go into the repository
-$ cd electron-markdownify
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
-```
-
-> **Note**
-> If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
-
-
-## Download
-
-You can [download](https://github.com/amitmerchant1990/electron-markdownify/releases/tag/v1.2.0) the latest installable version of Markdownify for Windows, macOS and Linux.
-
-## Emailware
-
-Markdownify is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <bullredeyes@gmail.com> about anything you'd want to say about this software. I'd really appreciate it!
-
-## Credits
-
-This software uses the following open source packages:
-
-- [Electron](http://electron.atom.io/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-- [showdown](http://showdownjs.github.io/showdown/)
-- [CodeMirror](http://codemirror.net/)
-- Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
-- [highlight.js](https://highlightjs.org/)
-
-## Related
-
-[markdownify-web](https://github.com/amitmerchant1990/markdownify-web) - Web version of Markdownify
-
-## Support
-
-<a href="https://www.buymeacoffee.com/5Zn8Xh3l9" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-<p>Or</p> 
-
-<a href="https://www.patreon.com/amitmerchant">
-	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
-
-## You may also like...
-
-- [Pomolectron](https://github.com/amitmerchant1990/pomolectron) - A pomodoro app
-- [Correo](https://github.com/amitmerchant1990/correo) - A menubar/taskbar Gmail App for Windows and macOS
-
-## License
-
-MIT
+  - 指标加权：基于维基百科上的解释与建议，我们可以对不同系统的点击率乘以不同的系数来分配权重，但具体怎么分配权重（我想应该是基于分母值）以及如何进行合理的解释说服他人，我不知道。维基百科上还说当出现辛普森悖论的时候往往说明我们拆分的维度不是影响整体指标的关键因素。比如我们这个例子中，整体的点击率的变动并不是由于不同系统造成的（这个我理解也不是很深刻）。
+  - 对于**AB实验**：在AB实验中，我们需要对实验组与对照组分配相同的流量（实际中不会完全一样，但也不会相差很多）。而当我们AB实验中某点击率指标发生了辛普森悖论，往往说明我们的分母，即实验组与对照组分配的流量，产生了很大的差距。我们要重新检查实验的设置，看是什么原因导致了流量分配的大差异。
 
 ---
-
-> [amitmerchant.com](https://www.amitmerchant.com) &nbsp;&middot;&nbsp;
-> GitHub [@amitmerchant1990](https://github.com/amitmerchant1990) &nbsp;&middot;&nbsp;
-> Twitter [@amit_merchant](https://twitter.com/amit_merchant)
